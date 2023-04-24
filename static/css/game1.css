@@ -1,0 +1,152 @@
+body {
+        font-size:16px;
+        margin:0;
+        padding:0;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content: center;
+        background-color: black;
+}
+
+button:not(.specialButton) {
+    border:none;
+    appearance:none;
+    outline:none;
+    display:inline-block;
+    font-size:1.5em;
+    cursor:pointer;
+    text-decoration:none;
+    padding:12px 48px 12px 48px;
+    border-radius:4px;
+    color:#16202B;
+    background-color:#0563AF;
+}
+
+button {   transition-duration: 0.4s; }
+button:hover.specialButton{
+    font-size:1.1em;
+    background-color:#05c46b;
+    border-bottom: 10px;
+}
+
+button:hover:not([disabled]){
+    font-size:1.6em;
+    background-color:#05c46b;
+}
+
+
+.game-intro h1 {
+    text-align: center;
+    align-items: center;
+    font-size: 50px;
+    color: lightslategrey;
+}
+.screen {
+    padding: 20px;
+    position: fixed;
+    top:50%;
+    left:50%;
+    margin-top: -100px;
+    margin-left: -190px;
+    height:300px;
+    width:250px;
+    text-align: center;
+}
+
+
+
+
+
+.box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+    margin-top: 10px;
+}
+
+.box label {
+  background-color: #0563af;
+  color: white;
+  padding: 12px;
+  width: 200px;
+  border: none;
+  font-size: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  /*appearance: button;*/
+  outline: none;
+}
+
+.box select {
+  background-color: #0563af;
+  color: white;
+  padding: 12px;
+  width: 225px;
+  border: none;
+  font-size: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  /*appearance: button;*/
+  outline: none;
+}
+
+
+.box::before {
+  content: "\f13a";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  font-size: 28px;
+  line-height: 45px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+.box:hover::before {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.box select option {
+  padding: 30px;
+}
+
+
+.scroll-left {
+	height: 50px;
+	overflow: hidden;
+	position: relative;
+	background: black;
+	color: white;
+	font-size: large;
+	border: 1px solid white;
+   }
+   .scroll-left p {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	line-height: 50px;
+	text-align: center;
+	/* Starting position */
+	transform:translateX(100%);
+	/* Apply animation to this element */
+	animation: scroll-left 13s linear infinite;
+   }
+   /* Move it (define the animation) */
+   @keyframes scroll-left {
+	0%   {
+	transform: translateX(100%);
+	}
+	100% {
+	transform: translateX(-100%);
+	}
+   }
+
+

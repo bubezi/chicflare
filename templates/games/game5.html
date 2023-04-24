@@ -1,0 +1,29 @@
+{% load static %}
+<head>
+    <meta name="viewport" content="user-scalable=no">
+    {% comment %} <meta name="viewport" content="width=device-width, initial-scale=1"> {% endcomment %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/game5.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static '/images/apple-touch-icon.png' %}">
+	<link rel="icon" type="image/png" sizes="32x32" href="{% static '/images/favicon-32x32.png' %}">
+	<link rel="icon" type="image/png" sizes="16x16" href="{% static '/images/favicon-16x16.png' %}">
+	<link rel="manifest" href="{% static '/images/site.webmanifest' %}">
+
+    <script type="text/css" src="{% static 'css/game5.css' %}"></script>
+
+
+<title>GAME 5 | MySpac3</title>
+</head>
+<body>
+<div class="container">
+    <h1>MySpac3 Tetris</h1>
+    <h4>Mobile version out soon</h4>
+    <div id="canvasTetris"></div>
+    <div class="description">
+      &#8592; &#8593; &#8594; &#8595; to move, P to pause
+      <br/> Speed increases every 1000 earned score points
+      <br/> Click to play
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="{% static 'js/game5.js' %}"></script>

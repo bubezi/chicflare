@@ -1,0 +1,58 @@
+{% extends 'store/main.html' %}
+{% load crispy_forms_filters %}
+{% load static %}
+{% load humanize %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+{#{% include 'store/homepage.html' %} #}
+    <div class="scroll-left">
+    <p>Website still under Development...</p>
+    </div>
+<!--
+<div class="row">
+    <div class="col">
+        <form method="GET"
+            id='form1'
+            class="form-inline mr-sm-2 space"
+            type="search"
+            name="searched"
+            style="font-weight: bold;
+                    font-size: larger;
+	                background-color: #fff;
+	                border-radius: 4px;
+                    padding: 10px;
+                    ">
+{#            {{ myFilter.form | crispy }}#}
+{#            {% csrf_token %}#}
+
+            <button class="btn btn-primary" type="submit">Search</button>
+        </form>
+    </div>
+</div>
+    <div class="row">
+        <div class="col-xs col-centered">
+            <button type="button" id="formButton" class="btn btn-secondary btn-lg btn-block">View / Hide Detailed Search</button>
+        </div>
+    </div>
+    -->
+     <div class="row">
+         {% for product in products %}
+            <div class="col-lg-4">
+                <img class="thumbnail" src="{{product.imageURL}}" alt="">
+                <div class="box-element product">
+                    <h6><strong>{{product.name}}</strong></h6>
+                    <hr>
+
+                    <button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+
+                    <a class="btn btn-outline-success" href="product/{{product}}">View</a>
+                    <h6 style="font-size: 18px; display: inline-block; float: right"><strong>KSh. {{product.price | floatformat:2 | intcomma }}</strong></h6>
+
+                </div>
+            </div>
+            {% endfor %}
+     </div>
+{% endblock content %}
+
+

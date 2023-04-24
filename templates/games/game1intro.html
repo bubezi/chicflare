@@ -1,0 +1,87 @@
+{% load static %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/game1.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static '/images/apple-touch-icon.png' %}">
+	<link rel="icon" type="image/png" sizes="32x32" href="{% static '/images/favicon-32x32.png' %}">
+	<link rel="icon" type="image/png" sizes="16x16" href="{% static '/images/favicon-16x16.png' %}">
+	<link rel="manifest" href="{% static '/images/site.webmanifest' %}">
+
+    <script type="text/css" src="{% static 'css/game1.css' %}"></script>
+
+<style>
+    body {
+         background-image: url("{% static 'images/background.jpg' %}")
+    }
+</style>
+
+<title>GAME 1 | MySpac3</title>
+</head>
+
+
+<body>
+
+<div class="game-intro" id="game-welcome">
+
+    <h1>Welcome: Let us take you to Space</h1>
+
+    <div id="start-screen" class="screen" style="display: block;">
+        <div class="box">
+            <form method="POST" class="form-group">
+                {% csrf_token %}
+                <button id="startButton" type="submit">Go to Space</button>
+                <label for="target">Target (from 0 to 10):</label>
+                  <input type="number" id="target" step='1' name="target" min="0" max="10" required>
+                <label for="area" class="label">Where are you playing from?</label>
+                    <select name="area" id="area">
+                        <option value="">select</option>
+                        {% if customer.location == 'Juja' %}
+                            <option value="containers">Containers</option>
+                            <option value="oasis">Oasis</option>
+                            <option value="gate a">Gate A</option>
+                            <option value="gate b">Gate B</option>
+                            <option value="gate c">Gate C</option>
+                            <option value="gate d">Gate D</option>
+                            <option value="stage">Stage</option>
+                            <option value="highpoint">Highpoint</option>
+                        {% elif customer.location == 'Rongai' %}
+                            <option value="someplace">Someplace</option>
+                        {% elif customer.location == 'Thika' %}
+                            <option value="someplace">Someplace</option>
+                        {% else %}
+                            <option value="someplace">Someplace</option>
+                        {% endif %}
+                    </select>
+                <label for="level" class="label">Choose a level</label>
+                    <select name="level" id="levels">
+                        <option value="">select</option>
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                <label for="character" class="label">Select Spaceship</label>
+                    <select name="character" id="character">
+                        <option value="">select</option>
+                        <option value="spaceship1">Buzz</option>
+                        <option value="spaceship2">Lightyear</option>
+                        <option value="spaceship3">Purple</option>
+                    </select>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+
+<script>
+    const spaceship_img = "{% static 'images/game1/spaceship.png' %}"
+    const button_img = "{% static 'images/game1/button.png' %}"
+    const invader_img = "{% static 'images/game1/invader.png' %}"
+    const startScreenBackground_img = "{% static 'images/game1/startScreenBackground.png' %}"
+
+</script>
+
+<script type="text/javascript" src="{% static 'js/game1intro.js' %}"></script>

@@ -1,0 +1,44 @@
+{% extends 'store/main.html'%}
+{% load crispy_forms_filters %}
+
+{% block title %}Invitation link{% endblock title%}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    <div style="font-size: 20px;">
+        {% if user.is_superuser %}
+            <div class="row" style="text-align: center; margin: auto">
+            <p>Use the following link to sign up a new user: </p>
+            </div>
+            <div class="row" style="text-align: center; margin: auto">
+            <p>The link will expire in 10 minutes</p>
+            </div>
+            <div class="row" style="font-size: 25px; text-align: center; margin: auto">
+                <p id="new"> {{ signup_url }} </p>
+            </div>
+{#            <div class="row" style="text-align: center; margin: auto">#}
+{#                <button onclick="copyFunction()">Copy</button>#}
+{#            </div>#}
+            <div class="row" style="text-align: center; margin: auto">
+                <a href="{{ signup_url }}" id=""><p id="new-url"> {{ signup_url }} </p></a>
+            </div>
+            <div class="row" style="text-align: center; margin: auto">
+            <p>Copy fast please</p>
+            </div>
+        {% endif %}
+            <div class="row" style="text-align: center; margin: auto">
+            <p>You will be redirected to the main Page in 20 Seconds</p>
+            </div>
+    </div>
+    <script>
+        function copyFunction(){
+            let copyText = document.getElementById("new");
+            navigator.clipboard.writeText(copyText.value);
+            alert("Copied the text: " + copyText.value);
+        }
+        setTimeout(() =>{window.location.href = "/";}, 20000); //2000 is equivalent to 2 seconds
+    </script>
+
+
+{% endblock content %}

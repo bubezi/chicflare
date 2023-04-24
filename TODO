@@ -1,0 +1,128 @@
+MySpac3 Main TODO
+- [x] MAKE IMAGES VISIBLE
+- [x] Migrate to Postgres
+- [x] Design view product page
+- [x] Design main page FOR GEN Z better
+- [x] Make a custom sign up page
+- [x] remove public sign up link
+- [x] Create a new link algorithm
+- [x] Hide specific Parts of website to normal Users
+- [x] maybe place an invite me page
+- [x] Favicon for game pages
+- [x] Design Games Landing Page
+- [x] Accounts.profile shit
+            - [x] create a profiles page For user
+            - [x] Ability for client to change location
+- [x] Change Login to no email required
+- [x] Phone required
+- [x] Separate Navbar from main html file
+- [x] Make store visible only to logged in users
+- [x] LOCATION
+- [x] Add Target input before Game
+- [x] Strain selection
+- [x] Automatic logout after some minutes
+- [x] Add gender to customer model
+- [x] Submit order data and start Game functionality
+- [x] Add gender to signup form.
+
+
+                - [ ] Connect Orders with Telegram
+- [x] obtain API token
+- [ ] create a Telegram bot to send messages to delivery people 
+- [ ] Set up webhook: In order to receive updates from the Telegram API
+- [ ] use Django's built-in support for webhooks to set up a view that will receive updates from the Telegram API. use the python-telegram-bot library to parse the updates and send messages to delivery people.
+- [ ] create a database of delivery people with their contact information and availability
+- [ ] Implement the algorithm: Once you have set up your webhook and database, you can implement your algorithm. Here's an outline of the algorithm:
+            - [ ] When a new order is created, generate an order number and store it in the database.
+            - [ ] Get a list of all delivery people in the area and check their availability.
+            - [ ] Send a message to all available delivery people with the order number and wait for their response.
+            - [ ] The first delivery person to respond will be assigned the order. 
+            - [ ] Send them the details of the order and mark them as busy in the database.
+            - [ ] Send a message to all other delivery people that the order has been completed
+            - [ ] mark them as available in the database.
+- [ ] Test the algorithm: Once you have implemented the algorithm, you can test it by creating a new order and verifying that delivery people receive messages and respond appropriately.
+
+
+- [ ] Astronaut with individual customers for each location
+- [ ] Payment method
+- [ ] MPESA API
+- [ ] Changing passwords and verifying email
+- [ ] Notification to phone number after sign up
+- [ ] Change all HTML comments to Django comments
+- [ ] Search funtionality
+
+
+Appearance
+- [ ] Remove corporate footer and place the image kind
+- [x] Fix footer
+- [ ] Make web features appear well on large screens
+- [ ] Make profile page look better
+- [ ] Make new kinds of users
+- [ ] Points for games
+- [ ] Countdown esp on generate link html
+- [ ] Adjust game 1 to be playable on multiple devices
+            - [ ] Phone
+            - [ ] Tablet
+
+
+_____________________________________________________________________________________________________________
+- [ ] Game 2
+- [ ] Game 1
+            - [x] Project setup
+            - [x] Create player
+            - [x] Move the player
+            - [x] Create projectiles
+            - [x] Create an invader
+            - [x] Create and move invaders
+            - [x] Spawn grids at intervals & take into into account new grid width
+            - [x] Shoot invaders
+            - [x] Invaders shoot back
+            - [x] Enemy explosions
+            - [x] Create background stars
+            - [x] Loose condition
+            - [x] Score
+            - [ ] Fixed-width canvas
+            - [ ] PAUSE FUNCTIONALITY
+        More features to add
+            - [x] Music
+            - [x] Dynamic score labels
+            - [ ] Machine Gun Power-up
+            - [x] Spaceship sprite animation
+            - [x] Start and game over UI
+            - [ ] Sound effects
+            - [x] Restart functionality
+        - [ ] Make game playable on touch screen devices
+            - [ ] Look and feel of mobile
+            - [x] Move functionality
+            - [x] Shoot functionality
+___________________________________________________________________________________________________________________
+
+HOSTING
+- [x] Create hosting checklist
+        - [x] python manage.py check --deploy
+        - [ ] Cloud DTB
+        - [ ] API
+            - [ ] M-PESA
+            - [ ] MESSAGING SERVICE
+                - [ ] OWN *****************
+                - [ ] Telegram
+                - [ ] SMS
+                - [ ] Whatsapp
+    
+
+        
+___________________________________________________________________________________________________________________
+- [ ] Reffering system
+    - [ ] Members can refer people with points
+    - [ ] Point system
+    - [ ] Easy has less than medium and hard
+    - [ ] Referring will reduce your points
+    - [ ] Limit of referring
+- [ ] Shipping Address
+- [x] Make Login page not visible to authenticated users
+            - [x] Make it better
+- [ ] User cannot delete themselves
+- [ ] Ability for user to delete account
+- [ ] Deleting users without affecting Orders and Shipping Address
+- [ ] Make login possible for both email and username
+- [ ] Cart experimentation and optimisations

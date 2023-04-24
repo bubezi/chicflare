@@ -1,0 +1,35 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/games.css' %}">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/css" src="{% static 'css/games.css' %}"></script>
+<link rel="apple-touch-icon" sizes="180x180" href="{% static '/images/apple-touch-icon.png' %}">
+	<link rel="icon" type="image/png" sizes="32x32" href="{% static '/images/favicon-32x32.png' %}">
+	<link rel="icon" type="image/png" sizes="16x16" href="{% static '/images/favicon-16x16.png' %}">
+	<link rel="manifest" href="{% static '/images/site.webmanifest' %}">
+
+<style>
+    body {
+         background-image: url("{% static 'images/background2.jpg' %}")
+    }
+</style>
+
+<title>ZONEH46</title>
+
+<body>
+<div class="game-intro" id="game-welcome">
+    <h1 style="color: white; margin-left: -100px; border: black">Z-ONEH46</h1>
+    <div id="start-screen" class="screen" style="display: block">
+        <h2 style="color: white; border: black">Welcome to Z-ONEH46</h2>
+        <a href="{% url 'game1intro' %}"><button id="startButton" >Spac3 Shooter</button></a>
+        <hr>
+        <a href="{% url 'game3' %}"><button id="startButton" >Bounce</button></a>
+        <hr>
+        <a href="{% url 'game2' %}"><button id="startButton">Pong</button></a>
+        <hr>
+        <a href="{% url 'game5' %}"><button id="startButton" >Tetris</button></a>
+    </div>
+</div>
+
+</body>
+<script type="text/javascript" src="{% static 'js/game1.js' %}"></script>
+

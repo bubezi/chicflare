@@ -1,0 +1,103 @@
+{% extends 'store/main.html'%}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load crispy_forms_filters %}
+{% load humanize %}
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
+
+
+
+{% block title %}Profile | MySpac3 {% endblock title%}
+
+
+{% block content %}
+    {% if errors %}
+        <div class="scroll-left">
+            <p>{{ errors }}</p>
+        </div>
+    {% endif %}
+
+
+    <div>  
+        <h1 class="text-center">Profile</h1>
+    </div>
+
+    <div class="row"> 
+        <div class="col-lg-4">   
+            <div class="container d-flex justify-content-center mt-5">
+
+                <div class="card">
+                    
+                    <div class="top-container">
+                        
+                        <img src="{% static 'images/placeholder.png' %}" class="img-fluid profile-image" width="70">
+                        
+                        <div class="ml-3">
+                            <h5 class="name">{{ customer.name }}</h5>
+                            {% if customer.email %}
+                                <p class="mail"> {{ customer.email }} </p>
+                            {% endif %}
+                        </div>
+                    </div>
+            
+            
+                    <div class="middle-container d-flex justify-content-between align-items-center mt-3 p-2">
+                            <div class="dollar-div px-3">
+                                
+                                <div class="round-div"><i class="fa fa-dollar dollar"></i></div>
+            
+                            </div>
+                            <div class="d-flex flex-column text-right mr-2">
+                                <span class="current-balance">Current Balance</span>
+                                <span class="amount"><span class="dollar-sign">KSh.</span>{{ customer.balance  | floatformat:2 | intcomma}}</span>
+                            </div>
+            
+                    </div>
+            
+                    <div class="recent-border mt-4">
+                        <span class="recent-orders">Phone: {{ customer.phone }}</span>
+                    </div>
+                    <div class="wishlist-border pt-2">
+                        <span class="wishlist">Points: {{ customer.points }}</span>
+                    </div>
+                    <div class="fashion-studio-border pt-2">
+                        <span class="fashion-studio">Location: {{ customer.location }}</span>
+                    </div>
+                    <div class="fashion-studio-border pt-2">
+                        <span class="fashion-studio">Gender: {{ customer.gender }}</span>
+                    </div>
+                    <div class="fashion-studio-border pt-2">
+                        <span class="fashion-studio">Location: {{ customer.location }}</span>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <button onclick="toggleItem('my-form', true); toggleItem('my-button', false)" class="btn btn-success" id="my-button">Change Info</button>
+
+            <form method="POST" class="form-group"  style="display: none" id="my-form">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button onclick="toggleItem('my-form', false); toggleItem('my-button', false)" type="submit" class="btn btn-success">Update Information</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+    function toggleItem(id, toggle) {
+        let element = document.getElementById(id)
+        element.style.display = (toggle) ? 'block' : 'none'
+    }
+    </script>
+
+
+{% endblock content %}

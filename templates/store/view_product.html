@@ -1,0 +1,31 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% load humanize %}
+{% load crispy_forms_tags %}
+
+{% block title %}View Product | MySPAC3{% endblock title%}
+{% block content %}
+	<div class="row">
+            <div class="col-lg-4">
+                <img class="thumbnail" src="{{product.imageURL}}">
+            </div>
+
+            <div class="col-lg-8">
+                <div class="box-element product">
+                    <h4><strong>{{product.name}}</strong></h4>
+                    <hr>
+                    <h4>KSh. {{product.price | floatformat:2 | intcomma }} only</h4>
+                </div>
+
+                <div class="box-element product">
+                    <p>{{product.details | linebreaks }}</p>
+                    <button data-product="{{product.id}}" 
+                            data-action="add" 
+                            class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                </div>
+            </div>
+	</div>
+
+
+
+{% endblock content %}
